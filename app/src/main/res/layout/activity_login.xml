@@ -93,6 +93,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="320dp"
         >
+
         <LinearLayout
             android:layout_width="80dp"
             android:layout_height="48dp"
@@ -122,15 +123,17 @@
 
     <!--android:visibility="gone"-->
 
-    <TextView
-        android:id="@+id/Login_TextView_Send"
+    <Button
+        android:id="@+id/dl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_weight="1"
         android:text="登录"
         android:textSize="17sp"
         android:textColor="#FFFFFF"
         android:background="#d92c45"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
-        />
+        android:gravity="center"/>
+
+
 </RelativeLayout>
