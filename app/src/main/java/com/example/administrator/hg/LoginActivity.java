@@ -76,8 +76,8 @@ public class LoginActivity extends AppCompatActivity {
             LoginRequest request = LoginRequest.newBuilder().setName(name).setPassword
                     (password).build();
             LoginReply response = blockingStub.logon(request);
-            System.out.println(response.getMessage()+"fuck u");
-            if(response.getMessage().equals("yes")){
+            System.out.println(response.getMes()+"fuck u");
+            if(response.getMes().equals("yes")){
                 return true;
             }else {
                 return false;
