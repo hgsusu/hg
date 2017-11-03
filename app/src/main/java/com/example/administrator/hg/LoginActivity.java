@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.examples.helloworld.GreeterGrpc;
+import io.grpc.examples.helloworld.LoginReply;
+import io.grpc.examples.helloworld.LoginRequest;
 
 
 /**
@@ -58,44 +61,44 @@ public class LoginActivity extends AppCompatActivity {
 
         });
     }
-//    private ManagedChannel channel;
-//    private GreeterGrpc.GreeterBlockingStub blockingStub;
-//
-//    /** Construct client connecting to HelloWorld server at {@code host:port}. */
-//    public Boolean HelloWorldClient(String host, int port,String name,String password)
-//    {
-//
-//        try {
-//            channel = ManagedChannelBuilder.forAddress(host, port)
-//                    .usePlaintext(true)
-//                    .build();
-//            blockingStub = GreeterGrpc.newBlockingStub(channel);
-//            LoginRequest request = LoginRequest.newBuilder().setName(name).setPassword
-//                    (password).build();
-//            LoginReply response = blockingStub.logon(request);
-//            System.out.println(response.getMe()+"fuck u");
-//            if(response.getMe().equals("yes")){
-//                return true;
-//            }else {
-//                return false;
-//            }
-//        }catch (Exception e){
-//            return false;
-//        }
-//
-//    }
-//
-//    public void shutdown() throws InterruptedException {
-//        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
-//    }
-//
-//    /** Say hello to server. */
-//
-//
-//    /**
-//     * Greet server. If provided, the first element of {@code args} is the name to use
-//     in the
-//     * greeting.
-//     */
+    private ManagedChannel channel;
+    private GreeterGrpc.GreeterBlockingStub blockingStub;
+
+    /** Construct client connecting to HelloWorld server at {@code host:port}. */
+    public Boolean HelloWorldClient(String host, int port,String name,String password)
+    {
+
+        try {
+            channel = ManagedChannelBuilder.forAddress(host, port)
+                    .usePlaintext(true)
+                    .build();
+            blockingStub = GreeterGrpc.newBlockingStub(channel);
+            LoginRequest request = LoginRequest.newBuilder().setName(name).setPassword
+                    (password).build();
+            LoginReply response = blockingStub.logon(request);
+            System.out.println(response.getMessage()+"fuck u");
+            if(response.getMessage().equals("yes")){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+
+    }
+
+    public void shutdown() throws InterruptedException {
+        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+    }
+
+    /** Say hello to server. */
+
+
+    /**
+     * Greet server. If provided, the first element of {@code args} is the name to use
+     in the
+     * greeting.
+     */
 
 }
