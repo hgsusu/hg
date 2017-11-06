@@ -127,7 +127,7 @@
 
     <Button
         android:id="@+id/dl"
-        android:layout_width="match_parent"
+        android:layout_width="190dp"
         android:layout_height="50dp"
         android:layout_weight="1"
         android:text="登录"
@@ -135,6 +135,19 @@
         android:textColor="#FFFFFF"
         android:background="#d92c45"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/zc"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="注册"
+        android:textSize="17sp"
+        android:textColor="#FFFFFF"
+        android:background="#d92c45"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:gravity="center"/>
 
 
