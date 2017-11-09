@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Administrator on 2017/10/19.
+ * Created by Administrator on 2017/11/9.
  */
 
-public class ZhuyeActivity  extends AppCompatActivity {
+public class ZhucheActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liaotian);
+        setContentView(R.layout.activity_zhuce);
     }
 }

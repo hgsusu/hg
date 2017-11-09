@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private String passwordInfo;
 
     private Button dl;
+    private Button zc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +41,31 @@ public class LoginActivity extends AppCompatActivity {
 
         final TextView usernameview = (TextView) findViewById(R.id.login_username);
         final TextView passwordview = (TextView) findViewById(R.id.login_password);
-        Button dl = (Button) findViewById(R.id.dl);
+        dl = (Button) findViewById(R.id.dl);
+        zc= (Button) findViewById(R.id.zc);
+
+        zc.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ZhucheActivity.class);
+                startActivity(intent);
+            }
+        });
+
         dl.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
-                String inputname= usernameview.getText().toString().trim();
-                String inputpassword=passwordview.getText().toString().trim();
-              //  Boolean dl = HelloWorldClient("10.0.2.2",50051,inputname,inputpassword);
-                if (inputname.isEmpty() || inputpassword.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "用户名和密码不能为空",
-                            Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                String inputname= usernameview.getText().toString().trim();
+//                String inputpassword=passwordview.getText().toString().trim();
+//              //  Boolean dl = HelloWorldClient("10.0.2.2",50051,inputname,inputpassword);
+//                if (inputname.isEmpty() || inputpassword.isEmpty()) {
+//                    Toast.makeText(getApplicationContext(), "用户名和密码不能为空",
+//                            Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
                 Intent intent = new Intent(LoginActivity.this, ZhuyeActivity.class);
                 startActivity(intent);
             }
